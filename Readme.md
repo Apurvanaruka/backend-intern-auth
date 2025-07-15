@@ -30,23 +30,7 @@ It includes:
 
 ---
 
-## 🗂️ How It Works
 
-```mermaid
-flowchart TD
-    A[Client (Browser/Postman)] -->|Request Login| B[FastAPI /login/google]
-    B -->|Redirect OAuth Consent| C[Google Identity Platform]
-    C -->|User Grants Permission| D[Google Callback: /auth/google/callback]
-    D -->|FastAPI Verifies Token| E[JWT Created]
-    E -->|Send JWT to Client| A
-
-    A -->|GET /api/posts + JWT| F[FastAPI /api/posts]
-    F -->|Valid JWT?| G{Check JWT}
-    G -- Yes --> H[Return Posts JSON]
-    G -- No --> I[401 Unauthorized]
-```
-
----
 
 ## 🔗 GitHub Repository
 
